@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# London Homecare
 
-## Getting Started
+Premium UK domestic and tenancy cleaning services web application built with **Next.js 15 (App Router)**, **TypeScript**, and **Tailwind CSS**, configured for **Vercel** deployment at **[https://london-homecare.vercel.app](https://london-homecare.vercel.app)**.
 
-First, run the development server:
+## Core Features & Architecture
+
+- **Home (`/`)**: Minimal, refined UK hero banner, service overview cards, trust guarantees (DBS vetting, £2M insurance), verified UK testimonials.
+- **Services (`/services`)**:
+  - **Regular Home Cleaning**: Recurring domestic housekeeping, bathroom/kitchen sanitisation, bed linen change (from £18.50/hr).
+  - **Deep Cleaning**: Top-to-bottom scrub, lime scale elimination, tile grout, behind furniture, skirting boards (from £145).
+  - **End of Tenancy Cleaning**: 100% deposit return guarantee, strict letting agent checklist, oven dip-tank degrease included, 72-hour re-clean safety net (from £180).
+  - **Interactive Instant Price & Time Estimator**: Real-time calculator estimating duration and price in £ GBP.
+- **About (`/about`)**: UK company story, living wage commitment, 4-stage cleaner vetting protocol, management team bios, and Companies Act registration.
+- **Contact (`/contact`)**:
+  - Interactive booking & enquiry form with UK postcode input and confirmation state.
+  - Head office address: `71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom`.
+  - Telephone: `+44 (0) 20 7946 0912`
+  - Email: `enquiries@londonhomecare.co.uk`
+  - London & surrounding counties coverage breakdown and client FAQ accordion.
+
+## Local Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Push to GitHub
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a repository named `london-homecare` on GitHub under your account (`devsharp-dev`):
+   - Direct link: [https://github.com/new](https://github.com/new)
+2. Push the local code:
+   ```bash
+   git push -u origin main
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel (https://london-homecare.vercel.app)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 1: Vercel Dashboard (Recommended)
+1. Go to [https://vercel.com/new](https://vercel.com/new).
+2. Import the `devsharp-dev/london-homecare` repository.
+3. In **Project Name**, enter: `london-homecare`.
+4. Click **Deploy**. Vercel will deploy to `https://london-homecare.vercel.app`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Option 2: Vercel CLI
+```bash
+npx vercel
+```
+- When prompted for project name, specify `london-homecare`.
