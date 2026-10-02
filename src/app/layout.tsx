@@ -1,29 +1,37 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { siteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://london-homecare.vercel.app"),
-  title: "London Homecare | Premium Home, Deep & End of Tenancy Cleaning Services",
-  description:
-    "Trusted UK domestic cleaning services across London and surrounding areas. Enhanced DBS-checked cleaners, £2M public liability insurance, and 100% guarantee on regular home cleaning, deep spring cleans, and end of tenancy handovers.",
-  keywords: [
-    "London homecare",
-    "London domestic cleaners",
-    "regular home cleaning UK",
-    "deep cleaning London",
-    "end of tenancy cleaning guarantee",
-    "vetted UK cleaners",
-    "tenancy deposit cleaning London",
-  ],
-  authors: [{ name: "London Homecare Ltd" }],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "London Homecare | Professional Home Cleaning Services in London",
+    template: "%s | London Homecare",
+  },
+  description: siteConfig.description,
+  alternates: {
+    canonical: siteUrl,
+  },
+  authors: [{ name: siteConfig.legalName }],
   openGraph: {
-    title: "London Homecare | Professional Domestic & Tenancy Cleaners",
-    description: "Spotless homes, trusted cleaners, British standards of care.",
-    url: "https://london-homecare.vercel.app",
+    title: "London Homecare | Professional Home Cleaning Services in London",
+    description: siteConfig.description,
+    url: siteUrl,
+    siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "London Homecare | Professional Home Cleaning Services in London",
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -35,8 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body className="antialiased min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans">
+        <JsonLd />
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

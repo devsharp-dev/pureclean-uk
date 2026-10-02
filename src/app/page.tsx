@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -8,8 +9,28 @@ import {
   CheckCircle2,
   Check,
   Clock,
-  Award
+  Award,
+  MapPin,
 } from "lucide-react";
+import { siteUrl, siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "London Homecare | Professional Home Cleaning Services in London",
+  description:
+    "Professional home cleaning services in London including regular home cleaning, deep cleaning and end of tenancy cleaning. Reliable, DBS-vetted housekeepers and £2M insurance.",
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: "London Homecare | Professional Home Cleaning Services in London",
+    description:
+      "Reliable, DBS-vetted housekeepers providing regular home cleaning, deep cleaning and end of tenancy cleaning across London.",
+    url: siteUrl,
+    siteName: siteConfig.name,
+    locale: "en_GB",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   const services = [
@@ -18,9 +39,10 @@ export default function HomePage() {
       slug: "regular",
       tagline: "Weekly or Fortnightly Care",
       description:
-        "Consistent, reliable domestic upkeep tailored to your family's routine. Keep your living rooms, kitchen, bedrooms, and bathrooms spotless every single week.",
+        "Consistent, reliable domestic upkeep tailored to your family's routine. Keep your living rooms, kitchen, bedrooms, and bathrooms spotless every single week with a dedicated cleaner.",
       image:
         "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Professional housekeeper dusting and cleaning a modern living room",
       features: [
         "Dedicated cleaner matched to your home",
         "Dusting, vacuuming, mopping & surfaces",
@@ -34,9 +56,10 @@ export default function HomePage() {
       slug: "deep",
       tagline: "Top-to-Bottom Reset",
       description:
-        "An intensive, restorative overhaul that eradicates hidden dust, lime scale, and stubborn grime from hard-to-reach spaces, skirting boards, and appliances.",
+        "An intensive, restorative overhaul that eradicates hidden dust, lime scale, and stubborn grime from hard-to-reach spaces, tile grout, skirting boards, and appliances.",
       image:
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Intensive deep cleaning and sanitisation of kitchen tiles and work surfaces",
       features: [
         "Full kitchen degrease & lime scale removal",
         "Behind furniture & skirting boards scrub",
@@ -50,9 +73,10 @@ export default function HomePage() {
       slug: "tenancy",
       tagline: "100% Deposit Back Guarantee",
       description:
-        "Rigorous tenancy turnover cleans conforming strictly to UK letting agent & inventory clerk checklists. Includes complete oven treatment and 72-hour re-clean safety net.",
+        "Rigorous tenancy turnover cleans conforming strictly to UK letting agent & inventory clerk checklists. Includes complete oven dip-tank degreasing and a 72-hour re-clean guarantee.",
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Spotless London apartment prepared for end of tenancy inventory inspection",
       features: [
         "Approved by top UK estate & letting agents",
         "Full professional oven dip-tank clean",
@@ -68,25 +92,25 @@ export default function HomePage() {
       icon: ShieldCheck,
       title: "Vetted & DBS Checked",
       description:
-        "Every housekeeper undergoes identity checks, reference verification, and strict background screening.",
+        "Every housekeeper undergoes identity verification, right-to-work checks, and strict criminal background screening.",
     },
     {
       icon: Award,
       title: "£2,000,000 Insured",
       description:
-        "Complete public liability coverage so you can have total confidence when we care for your property.",
+        "Full public liability insurance coverage gives you complete peace of mind while we care for your property.",
     },
     {
       icon: Clock,
       title: "Punctual & Consistent",
       description:
-        "Arriving on time with structured cleaning checklists designed to British cleaning standards.",
+        "Arriving on time with structured cleaning checklists designed to uphold British domestic standards.",
     },
     {
       icon: Sparkles,
       title: "Eco-Friendly Supplies",
       description:
-        "Non-toxic, cruelty-free British cleaning solutions safe for pets, little ones, and delicate finishes.",
+        "Non-toxic, cruelty-free cleaning solutions safe for children, pets, and delicate home surfaces.",
     },
   ];
 
@@ -123,25 +147,28 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Column: Headline & Value Proposition */}
+            {/* Left Column: Primary SEO H1 & Value Proposition */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold tracking-wide">
                 <Sparkles className="w-3.5 h-3.5 text-teal-400" />
                 <span>Premier UK Domestic &amp; Tenancy Cleaning</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none text-white">
-                Spotless living, <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">
-                  effortlessly managed.
-                </span>
-              </h1>
+              {/* Exact SEO H1 communicating Home cleaning, Cleaning services, London */}
+              <div className="space-y-3">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                  Professional Home Cleaning Services in London
+                </h1>
+                <p className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">
+                  Spotless living, effortlessly managed.
+                </p>
+              </div>
 
               <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                Reliable, DBS-vetted housekeepers delivering hotel-grade cleanliness to British households. From weekly scheduled upkeep to certified end-of-tenancy deposit handovers.
+                Reliable, DBS-vetted housekeepers providing regular home cleaning, deep cleaning and end of tenancy cleaning across London.
               </p>
 
-              {/* Action Buttons */}
+              {/* Action Buttons with clear descriptive anchor text */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link
                   href="/contact"
@@ -176,14 +203,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Image / Quick Card */}
+            {/* Right Column: Hero Image with accessible descriptive alt text */}
             <div className="lg:col-span-5">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
                   <Image
                     src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80"
-                    alt="Pristine British home interior"
+                    alt="Sunlit, impeccably maintained London townhouse living room"
                     fill
+                    sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
                     priority
                   />
@@ -211,8 +239,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Overview Section */}
-      <section className="py-20 bg-white">
+      {/* Services Overview Section (H2) */}
+      <section id="services" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">
@@ -226,10 +254,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Service Cards Grid */}
+          {/* Service Cards Grid (H3 for each service) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div
+              <article
                 key={service.slug}
                 className="group flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-teal-500/50 transition-all duration-300"
               >
@@ -237,8 +265,9 @@ export default function HomePage() {
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.imageAlt}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-md">
@@ -279,12 +308,12 @@ export default function HomePage() {
                       href={`/services#${service.slug}`}
                       className="inline-flex items-center text-xs font-semibold text-teal-600 hover:text-teal-700 group-hover:underline"
                     >
-                      <span>Details</span>
+                      <span>Explore {service.title}</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Link>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
@@ -300,7 +329,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Areas We Serve Section (H2) - Requirement 3 */}
+      <section id="areas" className="py-16 bg-slate-50 border-t border-slate-200 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold">
+              <MapPin className="w-3.5 h-3.5" />
+              <span>Geographic Coverage</span>
+            </div>
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Home Cleaning Services Across London
+            </h2>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              London Homecare provides professional domestic cleaners, deep cleans, and end of tenancy handovers to private homes, flats, and rentals throughout Greater London and key commuter communities.
+            </p>
+          </div>
+
+          {/* Clean structured grid of sample service areas */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-4xl mx-auto">
+            {siteConfig.areasServed.map((area, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-3.5 rounded-xl border border-slate-200 text-center shadow-xs hover:border-teal-500 hover:shadow-sm transition"
+              >
+                <span className="text-xs font-semibold text-slate-800 block">
+                  {area}
+                </span>
+                <span className="text-[10px] text-teal-600 font-medium">
+                  Service Available
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center text-xs text-slate-500">
+            <p>
+              Note: The above list represents example service coverage for this demonstration project. Need cleaning in your postcode?{" "}
+              <Link
+                href="/contact"
+                className="text-teal-600 hover:text-teal-700 font-semibold underline"
+              >
+                Check postcode availability on our contact page
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us (H2 & H3s) */}
       <section className="py-20 bg-slate-100/70 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
@@ -331,7 +408,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (H2) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-12">
@@ -350,7 +427,7 @@ export default function HomePage() {
                 className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex text-amber-400 mb-3">
+                  <div className="flex text-amber-400 mb-3" aria-label={`${t.stars} out of 5 stars`}>
                     {[...Array(t.stars)].map((_, s) => (
                       <Star key={s} className="w-4 h-4 fill-amber-400" />
                     ))}
@@ -369,13 +446,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Call to Action Banner */}
+      {/* Call to Action Banner (H2) */}
       <section className="py-16 bg-teal-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               Ready for a cleaner, fresher home?
-            </h3>
+            </h2>
             <p className="text-teal-100 text-sm max-w-xl">
               Get an instant quotation or book your domestic housekeeper online in under 60 seconds.
             </p>

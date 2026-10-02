@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ShieldCheck,
@@ -6,6 +7,25 @@ import {
   Building2,
   Leaf,
 } from "lucide-react";
+import { siteUrl, siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "About London Homecare | Trusted Domestic Cleaning Specialists in London",
+  description:
+    "Learn about London Homecare, our DBS-checked cleaners, £2M public liability insurance, living wage employment standards, and dedication to British domestic excellence.",
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+  openGraph: {
+    title: "About London Homecare | Trusted Domestic Cleaners in London",
+    description:
+      "Learn about London Homecare: London domestic cleaning with DBS-vetted housekeepers, £2M insurance, and living wages.",
+    url: `${siteUrl}/about`,
+    siteName: siteConfig.name,
+    locale: "en_GB",
+    type: "website",
+  },
+};
 
 export default function AboutPage() {
   const vettingSteps = [
@@ -61,16 +81,19 @@ export default function AboutPage() {
             <Building2 className="w-3.5 h-3.5" />
             <span>British Domestic Excellence</span>
           </div>
+
+          {/* Exact H1 for About Page */}
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            Setting the Benchmark for UK Home Care
+            About London Homecare
           </h1>
+
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
             London Homecare was founded in the capital to restore true peace of mind to domestic housekeeping. We combine meticulous British standards, dignified living wages, and unmatched vetting rigor.
           </p>
         </div>
       </section>
 
-      {/* Story & Mission Section */}
+      {/* Story & Mission Section (H2) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -113,9 +136,10 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80"
-                  alt="London Homecare professional housekeeper at work"
+                  alt="London Homecare professional housekeeper providing domestic cleaning service"
                   width={1000}
                   height={750}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950/90 to-transparent text-white">
@@ -128,7 +152,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Vetting Process */}
+      {/* Vetting Process (H2 & H3s) */}
       <section id="vetting" className="py-20 bg-slate-100/80 border-y border-slate-200 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
@@ -170,9 +194,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core British Pillars */}
+      {/* Core British Pillars (H2 & H3s) */}
       <section id="values" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
+            <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">
+              Core Principles
+            </span>
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Our Standards &amp; Company Values
+            </h2>
+            <p className="text-sm text-slate-600">
+              Built on transparency, rigorous property security, and verified environmental care.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-2xl bg-teal-50/60 border border-teal-100 space-y-4">
               <div className="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center">
@@ -207,7 +243,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Leadership Team (H2 & H3s) */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
@@ -231,8 +267,9 @@ export default function AboutPage() {
                 <div className="relative h-64 w-full">
                   <Image
                     src={person.image}
-                    alt={person.name}
+                    alt={`${person.name} - ${person.role} at London Homecare`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -249,14 +286,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Official UK Company Credentials */}
+      {/* Official UK Company Credentials (H2) */}
       <section className="py-12 bg-white border-t border-slate-200">
         <div className="max-w-5xl mx-auto px-4 text-center space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-slate-500">
             Official British Company Incorporation
-          </h3>
+          </h2>
           <p className="text-xs text-slate-500 leading-relaxed">
-            London Homecare Ltd is a company incorporated under the Companies Act 2006 in England and Wales (Company Registration No. 12948201). Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom. Registered with the Information Commissioner&apos;s Office (ICO) under the Data Protection Act 2018.
+            {siteConfig.legalName} is a sample demonstration company incorporated under the Companies Act 2006 in England and Wales (Company Registration No. {siteConfig.companyNumber}). Registered Office: {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.postalCode}, United Kingdom. Registered with the Information Commissioner&apos;s Office (ICO) under the Data Protection Act 2018.
           </p>
         </div>
       </section>
