@@ -54,14 +54,14 @@ export default function Footer() {
                 <Sparkles className="w-5 h-5" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                PureClean <span className="text-teal-400">UK</span>
+                London <span className="text-teal-400">Homecare</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Britain&apos;s trusted domestic and tenancy cleaning specialists. Delivering meticulous home hygiene, vetted professionals, and hotel-grade presentation to households across the UK.
             </p>
             <div className="pt-2 text-xs text-slate-400 space-y-1">
-              <p>PureClean Services Ltd • Registered in England &amp; Wales No. 12948201</p>
+              <p>London Homecare Ltd • Registered in England &amp; Wales No. 12948201</p>
               <p>VAT Registration: GB 384 1029 88</p>
             </div>
           </div>
@@ -156,8 +156,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-teal-400 shrink-0" />
-                <a href="mailto:enquiries@purecleanuk.co.uk" className="hover:text-teal-400 transition">
-                  enquiries@purecleanuk.co.uk
+                <a href="mailto:enquiries@londonhomecare.co.uk" className="hover:text-teal-400 transition">
+                  enquiries@londonhomecare.co.uk
                 </a>
               </li>
               <li className="flex items-start space-x-2.5">
@@ -173,7 +173,7 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 space-y-4 sm:space-y-0">
-          <p>© {new Date().getFullYear()} PureClean Services Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} London Homecare Ltd. All rights reserved.</p>
           <div className="flex space-x-6">
             <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>

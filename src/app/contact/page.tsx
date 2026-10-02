@@ -313,7 +313,7 @@ export default function ContactPage() {
                   Registered Headquarters
                 </span>
                 <h3 className="text-xl font-bold mt-1 text-white">
-                  PureClean UK Office
+                  London Homecare Office
                 </h3>
               </div>
 
@@ -361,10 +361,10 @@ export default function ContactPage() {
                       Email
                     </strong>
                     <a
-                      href="mailto:enquiries@purecleanuk.co.uk"
+                      href="mailto:enquiries@londonhomecare.co.uk"
                       className="text-teal-300 hover:text-white transition"
                     >
-                      enquiries@purecleanuk.co.uk
+                      enquiries@londonhomecare.co.uk
                     </a>
                   </div>
                 </div>

@@ -65,7 +65,7 @@ export default function AboutPage() {
             Setting the Benchmark for UK Home Care
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            PureClean UK was founded in London to restore true peace of mind to domestic housekeeping. We combine meticulous British standards, dignified living wages, and unmatched vetting rigor.
+            London Homecare was founded in the capital to restore true peace of mind to domestic housekeeping. We combine meticulous British standards, dignified living wages, and unmatched vetting rigor.
           </p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   For decades, hiring domestic cleaners in the United Kingdom meant dealing with unreliable casual arrangements, high turnover, and unverified agencies operating behind automated booking apps with zero human accountability.
                 </p>
                 <p>
-                  At PureClean UK, we decided to build a cleaning service the proper way. We treat our housekeepers as respected professionals—paying the London Living Wage, offering pension schemes, and investing in ongoing training. In return, our clients enjoy unmatched punctuality, meticulous attention to detail, and a familiar, smiling face they can trust with their front door key.
+                  At London Homecare, we decided to build a cleaning service the proper way. We treat our housekeepers as respected professionals—paying the London Living Wage, offering pension schemes, and investing in ongoing training. In return, our clients enjoy unmatched punctuality, meticulous attention to detail, and a familiar, smiling face they can trust with their front door key.
                 </p>
                 <p>
                   Whether maintaining a period Victorian terrace in Richmond or preparing a luxury penthouse in Canary Wharf for tenant handover, our team delivers consistent hotel-calibre results.
@@ -113,7 +113,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80"
-                  alt="PureClean UK professional housekeeper at work"
+                  alt="London Homecare professional housekeeper at work"
                   width={1000}
                   height={750}
                   className="w-full h-auto object-cover"
@@ -139,7 +139,7 @@ export default function AboutPage() {
               Our 4-Stage Vetting Protocol
             </h2>
             <p className="text-sm text-slate-600">
-              Only 1 in every 18 applicants qualifies to wear the PureClean uniform. Here is how we safeguard your family and property.
+              Only 1 in every 18 applicants qualifies to wear the London Homecare uniform. Here is how we safeguard your family and property.
             </p>
           </div>
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">
-              People Behind PureClean
+              People Behind London Homecare
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               Our Management Team
@@ -256,7 +256,7 @@ export default function AboutPage() {
             Official British Company Incorporation
           </h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            PureClean Services Ltd is a company incorporated under the Companies Act 2006 in England and Wales (Company Registration No. 12948201). Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom. Registered with the Information Commissioner&apos;s Office (ICO) under the Data Protection Act 2018.
+            London Homecare Ltd is a company incorporated under the Companies Act 2006 in England and Wales (Company Registration No. 12948201). Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom. Registered with the Information Commissioner&apos;s Office (ICO) under the Data Protection Act 2018.
           </p>
         </div>
       </section>

@@ -58,10 +58,10 @@ export default function Navbar() {
             </div>
             <div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
-                PureClean <span className="text-teal-600">UK</span>
+                London <span className="text-teal-600">Homecare</span>
               </span>
               <p className="text-[10px] text-slate-500 font-medium -mt-1 tracking-wider uppercase">
-                Premium Home Care
+                Premium UK Property Services
               </p>
             </div>
           </Link>

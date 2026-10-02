@@ -93,7 +93,7 @@ export default function HomePage() {
   const testimonials = [
     {
       quote:
-        "PureClean has looked after our flat in Kensington for over a year now. Having the exact same cleaner visit every Tuesday has given us so much peace of mind.",
+        "London Homecare has looked after our flat in Kensington for over a year now. Having the exact same cleaner visit every Tuesday has given us so much peace of mind.",
       author: "Charlotte H.",
       location: "Kensington, London",
       stars: 5,
@@ -305,7 +305,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Why British Homeowners Trust PureClean
+              Why British Homeowners Trust London Homecare
             </h2>
             <p className="text-slate-600 mt-2 text-sm sm:text-base">
               We eliminate the stress of hiring unverified cleaners. Professional standards, clear accountability, and complete property protection.
