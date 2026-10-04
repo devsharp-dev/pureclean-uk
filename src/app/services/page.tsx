@@ -97,6 +97,8 @@ export default function ServicesPage() {
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
                     priority={true}
+                    fetchPriority="high"
+                    loading="eager"
                   />
                   <div className="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
                     Weekly or Fortnightly
@@ -308,7 +310,6 @@ export default function ServicesPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
-                    priority={true}
                   />
                   <div className="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
                     Top-to-Bottom Overhaul
@@ -342,7 +343,6 @@ export default function ServicesPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
-                    priority={true}
                   />
                   <div className="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
                     Deposit Refund Guaranteed

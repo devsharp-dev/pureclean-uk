@@ -142,6 +142,8 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 500px"
                   className="w-full h-auto object-cover"
                   priority={true}
+                  fetchPriority="high"
+                  loading="eager"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950/90 to-transparent text-white">
                   <p className="text-sm font-semibold">Living Wage Foundation Accredited</p>
@@ -272,7 +274,6 @@ export default function AboutPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
-                    priority={true}
                   />
                 </div>
                 <div className="p-6 space-y-2">
