@@ -213,7 +213,7 @@ export default function HomePage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
-                    priority
+                    priority={true}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
@@ -269,6 +269,7 @@ export default function HomePage() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    priority={true}
                   />
                   <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-md">
                     {service.tagline}
