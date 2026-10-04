@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
 import { siteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -47,7 +46,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans">
-        <JsonLd />
         <Navbar />
         <main id="main-content" className="flex-grow">
           {children}

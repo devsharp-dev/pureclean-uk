@@ -138,8 +138,140 @@ export default function HomePage() {
     },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: siteConfig.name,
+        description: siteConfig.description,
+        inLanguage: "en-GB",
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
+        },
+      },
+      {
+        "@type": ["LocalBusiness", "CleaningService"],
+        "@id": `${siteUrl}/#organization`,
+        name: siteConfig.name,
+        legalName: siteConfig.legalName,
+        url: siteUrl,
+        logo: `${siteUrl}/favicon.ico`,
+        image:
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
+        description: siteConfig.description,
+        telephone: siteConfig.telephone,
+        email: siteConfig.email,
+        priceRange: "££",
+        currenciesAccepted: "GBP",
+        paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: siteConfig.address.addressLocality,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: "GB",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 51.5138,
+          longitude: -0.1245,
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ],
+            opens: "08:00",
+            closes: "18:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "09:00",
+            closes: "16:00",
+          },
+        ],
+        areaServed: siteConfig.areasServed.map((area) => ({
+          "@type": "AdministrativeArea",
+          name: area,
+        })),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "London Homecare Cleaning Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Regular Home Cleaning",
+                description:
+                  "Consistent weekly or fortnightly domestic cleaning tailored to your home and schedule.",
+                url: `${siteUrl}/services#regular`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Deep Cleaning",
+                description:
+                  "Intensive top-to-bottom scrub, lime scale elimination, and restorative hygiene.",
+                url: `${siteUrl}/services#deep`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "End of Tenancy Cleaning",
+                description:
+                  "Guaranteed checkout clean meeting strict UK letting agent inventory standards with 72-hour re-clean guarantee.",
+                url: `${siteUrl}/services#tenancy`,
+              },
+            },
+          ],
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "128",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/#webpage`,
+        url: siteUrl,
+        name: "London Homecare | Professional Home Cleaning Services in London",
+        description: siteConfig.description,
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
+        about: {
+          "@id": `${siteUrl}/#organization`,
+        },
+        inLanguage: "en-GB",
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white py-20 lg:py-28">
         {/* Subtle patterned overlay */}
