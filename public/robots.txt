@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://london-homecare.vercel.app/sitemap.xml
